@@ -1,0 +1,54 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = '#>',
+  fig.path = 'man/figures/README-',
+  out.width = '100%'
+)
+```
+
+# ggtiger
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+The goal of `ggtiger` is to ...
+
+## Installation
+
+You can install the development version of `ggtiger` from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("christopherkenny/ggtiger")
+```
+
+## Example
+
+This is a package attempts to capture the Princeton University brand guidelines for making plots in `ggplot2`.
+
+```{r example}
+library(ggtiger)
+library(ggplot2)
+
+mpg |> 
+  ggplot() +
+  geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.8) +
+  labs(
+    title = 'Density plot',
+    subtitle = 'City Mileage Grouped by Number of cylinders',
+    caption = 'Source: mpg',
+    x = 'City Mileage',
+    fill = '# Cylinders'
+  ) +
+  facet_wrap(~ (hwy > 29)) +
+  scale_fill_princeton_d()
+```
+
