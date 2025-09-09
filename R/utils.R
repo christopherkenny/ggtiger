@@ -38,7 +38,9 @@ select_title_font <- function(family = NULL) {
     }
 
     # Try to find and add from system fonts
-    font_match <- systemfonts::match_font(font)
+    font_info <- systemfonts::system_fonts()
+    font_match <- font_info[grepl(gsub(' ', '', font), font_info$family, ignore.case = TRUE) &
+                                 grepl('regular', font_info$style, ignore.case = TRUE), ]
     if (!is.na(font_match$path)) {
       sysfonts::font_add(font, font_match$path)
       return(font)
@@ -51,7 +53,9 @@ select_title_font <- function(family = NULL) {
   }
 
   # Try to find and add Noto Serif from system fonts
-  noto_match <- systemfonts::match_font('Noto Serif')
+  font_info <- systemfonts::system_fonts()
+  noto_match <- font_info[grepl(gsub(' ', '', 'Noto Serif'), font_info$family, ignore.case = TRUE) &
+                            grepl('regular', font_info$style, ignore.case = TRUE), ]
   if (!is.na(noto_match$path)) {
     sysfonts::font_add('Noto Serif', noto_match$path)
     return('Noto Serif')

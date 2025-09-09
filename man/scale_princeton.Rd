@@ -73,7 +73,8 @@ ggplot(mpg, aes(cty)) +
     fill = '# Cylinders'
   ) +
   facet_wrap(~ (hwy > 29)) +
-  scale_fill_princeton_d()
+  scale_fill_princeton_d() +
+  theme_princeton()
 
 }
 \concept{princeton}

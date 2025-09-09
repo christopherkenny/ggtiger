@@ -24,7 +24,8 @@
 #'     fill = '# Cylinders'
 #'   ) +
 #'   facet_wrap(~ (hwy > 29)) +
-#'   scale_fill_princeton_d()
+#'   scale_fill_princeton_d() +
+#'   theme_princeton()
 #'
 scale_color_princeton_c <- function(palette = 'sequential_orange', ...) {
   pal <- palette_from_name(palette)

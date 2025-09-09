@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `ggtiger` is to …
@@ -39,7 +40,8 @@ mpg |>
     fill = '# Cylinders'
   ) +
   facet_wrap(~ (hwy > 29)) +
-  scale_fill_princeton_d()
+  scale_fill_princeton_d() +
+  theme_princeton()
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />

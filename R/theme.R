@@ -30,7 +30,7 @@ theme_princeton <- function(princeton_font = TRUE, title_family = NULL,
     panel.background = ggplot2::element_rect(fill = '#ffffff', color = '#ffffff'),
     legend.background = ggplot2::element_rect(fill = '#ffffff', color = NA),
     strip.background = ggplot2::element_rect(fill = '#010101', colour = '#010101'),
-    strip.text = ggplot2::element_text(colour = '#e98338', size = 10),
+    strip.text = ggplot2::element_text(colour = '#e98338', size = 14),
     ...
   )
 }
