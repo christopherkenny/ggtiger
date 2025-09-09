@@ -1,4 +1,6 @@
 url: http://christophertkenny.com/ggtiger/
 template:
   bootstrap: 5
-
+  bslib:
+    primary: "#e98338"
+    base_font: {google: "Libre Franklin"}
