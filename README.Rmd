@@ -19,7 +19,10 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of `ggtiger` is to ...
+`ggtiger` offers a setup for `ggplot2` that follows the Princeton University brand guidelines, where possible.
+As some fonts must be sourced from the [Office of Communications](https://communications.princeton.edu/guides-tools/logo-graphic-identity), this will search for them locally first.
+If none are available, it uses secondary fonts from the brand guidelines and downloads them from Google Fonts if necessary.
+It contains several color palettes, as designed for "infographics" by the Office of Communications.
 
 ## Installation
 
@@ -53,3 +56,11 @@ mpg |>
   theme_princeton()
 ```
 
+All color schemes are included in `princeton`, which is a list of [palette](https://github.com/christopherkenny/palette) vectors.
+
+```{r, echo = FALSE}
+for (p in names(princeton)) {
+  cat(p)
+  print(plot(princeton[[p]]))
+}
+```

@@ -41,8 +41,8 @@ select_title_font <- function(family = NULL) {
     font_info <- systemfonts::system_fonts()
     font_match <- font_info[grepl(gsub(' ', '', font), font_info$family, ignore.case = TRUE) &
                                  grepl('regular', font_info$style, ignore.case = TRUE), ]
-    if (!is.na(font_match$path)) {
-      sysfonts::font_add(font, font_match$path)
+    if (nrow(font_match) > 0 && !is.na(font_match$path[1])) {
+      sysfonts::font_add(font, font_match$path[1])
       return(font)
     }
   }
@@ -56,8 +56,8 @@ select_title_font <- function(family = NULL) {
   font_info <- systemfonts::system_fonts()
   noto_match <- font_info[grepl(gsub(' ', '', 'Noto Serif'), font_info$family, ignore.case = TRUE) &
                             grepl('regular', font_info$style, ignore.case = TRUE), ]
-  if (!is.na(noto_match$path)) {
-    sysfonts::font_add('Noto Serif', noto_match$path)
+  if (nrow(font_match) > 0 && !is.na(noto_match$path[1])) {
+    sysfonts::font_add('Noto Serif', noto_match$path[1])
     return('Noto Serif')
   }
 
