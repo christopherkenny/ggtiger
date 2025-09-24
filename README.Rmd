@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ggtiger
+# ggtiger <a href="http://christophertkenny.com/ggtiger/"><img src="man/figures/logo.png" align="right" height="138" alt="ggtiger website" /></a>
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/christopherkenny/ggtiger/actions/workflows/R-CMD-check.yaml)
@@ -41,7 +41,7 @@ This is a package attempts to capture the Princeton University brand guidelines 
 library(ggtiger)
 library(ggplot2)
 
-mpg |> 
+mpg |>
   ggplot() +
   geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.8) +
   labs(

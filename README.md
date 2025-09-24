@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggtiger
+# ggtiger <a href="http://christophertkenny.com/ggtiger/"><img src="man/figures/logo.png" align="right" height="138" alt="ggtiger website" /></a>
 
 <!-- badges: start -->
 
@@ -36,7 +36,7 @@ guidelines for making plots in `ggplot2`.
 library(ggtiger)
 library(ggplot2)
 
-mpg |> 
+mpg |>
   ggplot() +
   geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.8) +
   labs(
