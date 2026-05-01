@@ -1,0 +1,141 @@
+# ggtiger
+
+`ggtiger` offers a setup for `ggplot2` that follows the Princeton
+University brand guidelines, where possible. As some fonts must be
+sourced from the [Office of
+Communications](https://communications.princeton.edu/guides-tools/logo-graphic-identity),
+this will search for them locally first. If none are available, it uses
+secondary fonts from the brand guidelines and downloads them from Google
+Fonts if necessary. It contains several color palettes, as designed for
+“infographics” by the Office of Communications.
+
+## Installation
+
+You can install the development version of `ggtiger` from
+[GitHub](https://github.com/) with:
+
+``` r
+
+# install.packages("pak")
+pak::pak("christopherkenny/ggtiger")
+```
+
+## Example
+
+This is a package attempts to capture the Princeton University brand
+guidelines for making plots in `ggplot2`.
+
+``` r
+
+library(ggtiger)
+library(ggplot2)
+
+mpg |>
+  ggplot() +
+  geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.8) +
+  labs(
+    title = 'Density plot',
+    subtitle = 'City Mileage Grouped by Number of cylinders',
+    caption = 'Source: mpg',
+    x = 'City Mileage',
+    fill = '# Cylinders'
+  ) +
+  facet_wrap(~ (hwy > 29)) +
+  scale_fill_princeton_d() +
+  theme_princeton()
+```
+
+![](reference/figures/README-example-1.png)
+
+All color schemes are included in `princeton`, which is a list of
+[palette](https://github.com/christopherkenny/palette) vectors.
+
+``` R
+#> core
+```
+
+![](reference/figures/README-unnamed-chunk-2-1.png)
+
+``` R
+#> neutrals
+```
+
+![](reference/figures/README-unnamed-chunk-2-2.png)
+
+``` R
+#> coreplus
+```
+
+![](reference/figures/README-unnamed-chunk-2-3.png)
+
+``` R
+#> categorical
+```
+
+![](reference/figures/README-unnamed-chunk-2-4.png)
+
+``` R
+#> diverging
+```
+
+![](reference/figures/README-unnamed-chunk-2-5.png)
+
+``` R
+#> sequential_orange
+```
+
+![](reference/figures/README-unnamed-chunk-2-6.png)
+
+``` R
+#> sequential_red
+```
+
+![](reference/figures/README-unnamed-chunk-2-7.png)
+
+``` R
+#> sequential_olive
+```
+
+![](reference/figures/README-unnamed-chunk-2-8.png)
+
+``` R
+#> sequential_sky_blue
+```
+
+![](reference/figures/README-unnamed-chunk-2-9.png)
+
+``` R
+#> sequential_royal_blue
+```
+
+![](reference/figures/README-unnamed-chunk-2-10.png)
+
+``` R
+#> sequential_grey_blue
+```
+
+![](reference/figures/README-unnamed-chunk-2-11.png)
+
+``` R
+#> sequential_yellow
+```
+
+![](reference/figures/README-unnamed-chunk-2-12.png)
+
+``` R
+#> sequential_pink
+```
+
+![](reference/figures/README-unnamed-chunk-2-13.png)
+
+``` R
+#> sequential_grey
+```
+
+![](reference/figures/README-unnamed-chunk-2-14.png)
+
+``` R
+#> sequential_magenta
+```
+
+![](reference/figures/README-unnamed-chunk-2-15.png)
